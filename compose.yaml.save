@@ -1,0 +1,13 @@
+services:
+ backend:
+  image: back_sas_img:1
+  build:
+   context: /dockerfile
+   dockerfile: backend_multistage_dockerfile
+  ports:
+   -"8080:8080"
+ mysql
+  image: mysql:8.0.33
+  
+ 
+

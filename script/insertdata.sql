@@ -1,3 +1,4 @@
+delete from `sqlserversas`.`announcement`;
 delete from `sqlserversas`.`category`;
 ALTER TABLE `sqlserversas`.`category` AUTO_INCREMENT = 1;
 INSERT INTO `sqlserversas`.`category` (`categoryName`) VALUES ('ทั่วไป');
@@ -5,7 +6,6 @@ INSERT INTO `sqlserversas`.`category` (`categoryName`) VALUES ('ทุนกา�
 INSERT INTO `sqlserversas`.`category` (`categoryName`) VALUES ('หางาน');
 INSERT INTO `sqlserversas`.`category` (`categoryName`) VALUES ('ฝึกงาน');
 
-delete from `sqlserversas`.`announcement`;
 ALTER TABLE `sqlserversas`.`announcement` AUTO_INCREMENT = 1;
 INSERT INTO `sqlserversas`.`announcement` ( `announcementTitle`, `announcementDescription`, `announcementCategory`, `announcementDisplay`) VALUES ( 'บริษัท เน็ตเซอร/พลัส จํากัด รับสมัครงาน 2 ตําแหน่ง', 'บริษัท เน็ตเซอร์/พลัส จํากัด เปิดรับสมัครงาน 2 ตําแหน่ง Application Support และ Customer Support', '3', 'N');
 INSERT INTO `sqlserversas`.`announcement` ( `announcementTitle`, `announcementDescription`, `announcementCategory`, `closeDate`, `announcementDisplay`) VALUES ( 'รายชื่อนักศึกษาที่ได้รับทุนการศึกษาประเภท \"ทุนจ้างงาน\" 2/2565', 'คณะ ฯประกาศรายชื่อนักศึกษาที่ได้รับทุนการศึกษาประเภท \"ทุนจ้างงาน\" ประจําภาคการศึกษา 2/2565', '2', '2023-05-31 11:00:00', 'Y');
