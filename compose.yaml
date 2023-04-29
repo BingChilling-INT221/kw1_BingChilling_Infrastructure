@@ -5,7 +5,7 @@ services:
   image: back_sas_img:1
   build:
    context: /
-   dockerfile: /home/moniyom/kw1_BingChilling_Infrastructure/dockerfiles/backend_multistage_dockerfile
+   dockerfile: /sas/kw1_BingChilling_Infrastructure/dockerfiles/backend_multistage_dockerfile
   ports:
    - 8080:8080
   depends_on:
@@ -16,17 +16,31 @@ services:
   image: mysql:8.0.33
   container_name: dbserver
   environment:
+   - MYSQL_ROOT_PASSWORD=123
    - LANG="en_US.UTF-8"
    - TZ="UTC"
    - MYSQL_USER=dev1
    - MYSQL_PASSWORD=123
    - MYSQL_DATABASE=sqlserversas
-  env_file:
-   - password_root.env
+#  env_file:
+#   - password_root.env
   volumes:
-   - /home/moniyom/mysql:/var/lib/mysql
+   - /sas/mysql:/var/lib/mysql
   networks:
    - sas_network
+  ports:
+   - 3306:3306
+ frontend:
+  container_name: frontend
+  image: front_sas_img:1
+  build:
+   context: /
+   dockerfile: /sas/kw1_BingChilling_Infrastructure/dockerfiles/frontend_multistage_dockerfile
+  ports:
+   - 80:80
+  depends_on:
+   - backend
 networks:
   sas_network:
- 
+#   name:sas_network 
+  
