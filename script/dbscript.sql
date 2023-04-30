@@ -37,7 +37,6 @@ CREATE TABLE `category` (
 
 LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (1,'ทั่วไป'),(2,'ทุนการศึกษา'),(3,'หางาน'),(4,'ฝึกงาน');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -99,7 +98,6 @@ CREATE TABLE `announcement` (
 
 LOCK TABLES `announcement` WRITE;
 /*!40000 ALTER TABLE `announcement` DISABLE KEYS */;
-INSERT INTO `announcement` VALUES (1,'บริษัท เน็ตเซอร/พลัส จํากัด รับสมัครงาน 2 ตําแหน่ง','บริษัท เน็ตเซอร์/พลัส จํากัด เปิดรับสมัครงาน 2 ตําแหน่ง Application Support และ Customer Support',3,NULL,NULL,'N'),(2,'รายชื่อนักศึกษาที่ได้รับทุนการศึกษาประเภท \"ทุนจ้างงาน\" 2/2565','คณะ ฯประกาศรายชื่อนักศึกษาที่ได้รับทุนการศึกษาประเภท \"ทุนจ้างงาน\" ประจําภาคการศึกษา 2/2565',2,NULL,'2023-05-31 11:00:00','Y'),(3,'แนวปฎิบัติการสอบออนไลน์/ พ.ศ. 2565','ประกาศมหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี เรื่องแนวทางปฎิบัติการสอบออนไลน์/ พ.ศ. 2565',1,'2023-01-26 23:00:00',NULL,'Y'),(4,'กิจกรรมพี่อ้อย พี่ฉอด On Tour 2566','ขอเชิญนักศึกษาทุกชั้นปี เข้าร่วมกิจกรรมพี่อ้อย พี่ฉอด On Tour',1,'2023-04-18 23:00:00','2023-05-08 11:00:00','Y');
 /*!40000 ALTER TABLE `announcement` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
