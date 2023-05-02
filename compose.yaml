@@ -28,8 +28,8 @@ services:
    - /sas/mysql:/var/lib/mysql
   networks:
    - sas_network
-  ports:
-   - 3306:3306
+#  ports:
+#   - 3306:3306
  frontend:
   container_name: frontend
   image: front_sas_img:1
