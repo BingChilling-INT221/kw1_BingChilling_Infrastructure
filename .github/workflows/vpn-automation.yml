@@ -7,13 +7,6 @@ jobs:
   vpn-automation:
     runs-on: ubuntu-latest
     steps:
-      - name: Connect to VPN
-        uses: kota65535/github-openvpn-connect-action@v2
-        with:
-          config_file: ./github/workflows/sit-client.ovpn
-          username: 64130500014
-          password: "!ManisocN20kmutt"
       - name: Run automation script
         run: |
-          cd /path/to/automation/script
-          python automation.py
+          ls
