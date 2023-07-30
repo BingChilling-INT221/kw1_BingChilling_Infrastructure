@@ -1,1 +1,19 @@
-
+name: VPN Automation
+on:
+  push:
+    branches:
+      - master
+jobs:
+  vpn-automation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Connect to VPN
+        uses: kota65535/github-openvpn-connect-action@v2
+        with:
+          client-config-path: ./client.ovpn
+          username: your-username
+          password: your-password
+      - name: Run automation script
+        run: |
+          cd /path/to/automation/script
+          python automation.py
