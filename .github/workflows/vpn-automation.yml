@@ -13,6 +13,12 @@ jobs:
         run: |
           sudo apt update
           sudo apt install -y openvpn openvpn-systemd-resolved
+      - name: Connect to VPN
+        uses: kota65535/github-openvpn-connect-action@v2
+        with:
+          config_file: ./sit-client.ovpn
+          username: 64130500014
+          password: "!ManisocN20kmutt"
       - name: Run automation script
         run: |
           ls *
