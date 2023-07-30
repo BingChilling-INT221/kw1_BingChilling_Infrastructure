@@ -2,7 +2,7 @@ name: VPN Automation
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   vpn-automation:
     runs-on: ubuntu-latest
