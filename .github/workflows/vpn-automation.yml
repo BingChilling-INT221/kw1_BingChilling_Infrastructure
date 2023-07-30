@@ -9,4 +9,4 @@ jobs:
     steps:
       - name: Run automation script
         run: |
-          ls
+          pwd
