@@ -15,4 +15,4 @@ jobs:
           sudo apt install -y openvpn openvpn-systemd-resolved
       - name: Run automation script
         run: |
-          ls -al
+          ls *
