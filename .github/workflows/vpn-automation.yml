@@ -10,9 +10,9 @@ jobs:
       - name: Connect to VPN
         uses: kota65535/github-openvpn-connect-action@v2
         with:
-          client-config-path: ./client.ovpn
-          username: your-username
-          password: your-password
+          client-config-path: ./sit-client.ovpn
+          username: 64130500014
+          password: !ManisocN20kmutt
       - name: Run automation script
         run: |
           cd /path/to/automation/script
