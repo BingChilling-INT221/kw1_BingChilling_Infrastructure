@@ -12,7 +12,7 @@ jobs:
         with:
           client-config-path: ./sit-client.ovpn
           username: 64130500014
-          password: !ManisocN20kmutt
+          password: '!ManisocN20kmutt'
       - name: Run automation script
         run: |
           cd /path/to/automation/script
