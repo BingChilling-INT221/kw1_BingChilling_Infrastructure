@@ -22,4 +22,5 @@ jobs:
           password: "!ManisocN20kmutt"
       - name: Deploy
         run: |
-          ssh moniyom@ip22kw1.sit.kmutt.ac.th "ls -al"
+          ssh moniyom@ip22kw1.sit.kmutt.ac.th 
+          ls 
