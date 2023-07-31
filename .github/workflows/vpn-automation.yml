@@ -1,25 +1,22 @@
-name: VPN Automation
+name: Deploy to VPN Server
+
 on:
   push:
     branches:
       - main
+
 jobs:
-  vpn-automation:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
       - name: Install OpenVPN
         run: |
           sudo apt update
-          sudo apt install -y openvpn openvpn-systemd-resolved
-          sudo openvpn --mktun --dev tun0
+          sudo apt install -y openvpn
       - name: Connect to VPN
-        uses: kota65535/github-openvpn-connect-action@v2
+        uses: "kota65535/github-openvpn-connect-action@v2"
         with:
-          config_file: ./sit-client.ovpn
+          config_file: ./vpn-st.ovpn
           username: 64130500014
           password: "!ManisocN20kmutt"
-      - name: Run automation script
-        run: |
-          ls *
