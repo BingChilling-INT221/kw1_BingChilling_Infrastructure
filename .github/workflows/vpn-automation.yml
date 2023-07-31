@@ -20,7 +20,11 @@ jobs:
           config_file: ./vpn-st.ovpn
           username: 64130500014
           password: "!ManisocN20kmutt"
-      - name: Deploy
-        run: |
-          ssh moniyom@ip22kw1.sit.kmutt.ac.th 
-          ls 
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+         host: "ip22kw1.sit.kmutt.ac.th"
+         username: moniyom
+         password: 12345678
+         port: 22
+         script: whoami
