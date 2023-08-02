@@ -27,4 +27,4 @@ jobs:
          username: ${{ secrets.SERVER_USERNAME }}
          password: ${{ secrets.SERVER_PASS}}
          port: 22
-         script: cd /home/moniyom/kw1_BingChilling_Frontend/ && git pull && cd /home/moniyom/kw1_BingChilling_Backend/ && git pull && cd /home/moniyom/kw1_BingChilling_Infrastructure/ && docker compose build   && docker compose up -d && docker system prune --all --volumes --force 
+         script: cd /home/moniyom/kw1_BingChilling_Frontend/ && git pull && cd /home/moniyom/kw1_BingChilling_Backend/ && git pull && cd /home/moniyom/kw1_BingChilling_Infrastructure/ && docker compose build   && docker compose up -d 
