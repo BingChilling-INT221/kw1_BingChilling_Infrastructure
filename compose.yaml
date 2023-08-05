@@ -12,6 +12,7 @@ services:
    - mysql
   networks:
    - sas_network
+  restart: always
  mysql:
   image: mysql:8.0.33
   container_name: dbserver
@@ -28,6 +29,7 @@ services:
    - sas_network
   ports:
    - 3306:3306
+  restart: always
  frontend:
   container_name: frontend
   image: front_sas_img:1
@@ -38,6 +40,7 @@ services:
    - 80:80
   depends_on:
    - backend
+  restart: always
 networks:
   sas_network:
   
