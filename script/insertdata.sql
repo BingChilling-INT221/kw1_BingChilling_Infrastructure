@@ -13,3 +13,10 @@ INSERT INTO `sqlserversas`.`announcement` ( `announcementTitle`, `announcementDe
 INSERT INTO `sqlserversas`.`announcement` ( `announcementTitle`, `announcementDescription`, `announcementCategory`, `publishDate`, `announcementDisplay`) VALUES ( 'แนวปฎิบัติการสอบออนไลน์ พ.ศ. 2565', 'ประกาศมหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี เรื่องแนวทางปฎิบัติการสอบออนไลน์พ.ศ. 2565', '1', '2023-01-26 23:00:00', 'Y');
 INSERT INTO `sqlserversas`.`announcement` ( `announcementTitle`, `announcementDescription`, `announcementCategory`, `publishDate`, `closeDate`, `announcementDisplay`) VALUES ( 'กิจกรรมพี่อ้อย พี่ฉอด On Tour 2566', 'ขอเชิญนักศึกษาทุกชั้นปี เข้าร่วมกิจกรรมพี่อ้อย พี่ฉอด On Tour', '1', '2023-04-18 23:00:00', '2023-05-08 11:00:00', 'Y');
 commit;
+delete from `sqlserversas`.`user`;
+ALTER TABLE `sqlserversas`.`user` AUTO_INCREMENT = 1;
+insert into `sqlserversas`.`user`VALUES (1,'sanit','Sanit Sirisawatvatana','sanit.sir@kmutt.ac.th','admin','2023-08-15 08:00:00+07:00','2023-08-15 08:00:00+07:00');
+insert into `sqlserversas`.`user`VALUES(2,'pornthip','Pornthip Sirijutikul','pornthip.sri@kmutt.ac.th','announcer','2023-08-15 09:30:00+07:00','2023-08-15 09:30:00+07:00');
+insert into `sqlserversas`.`user`VALUES(3,'jaruwan_w','Jaruwan Maneesart','jaruwan.wee@kmutt.ac.th','announcer','2023-08-16 08:00:00+07:00','2023-08-16 08:00:00+07:00');
+insert into `sqlserversas`.`user`VALUES(4,'vichchuda','Vichchuda Tedoloh','vichchuda.ted@kmutt.ac.th','announcer','2023-08-16 09:30:00+07:00','2023-08-16 09:30:00+07:00');
+commit;
