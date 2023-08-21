@@ -1,43 +1,58 @@
 version: "3.8"
 services:
- backend:
-  container_name: backend
-  image: back_sas_img:1
-  build:
-   context: ..
-   dockerfile: ./kw1_BingChilling_Infrastructure/dockerfiles/backend_multistage_dockerfile
-  ports:
-   - 8080:8080
-  depends_on:
-   - mysql
-  networks:
-   - sas_network
- mysql:
-  image: mysql:8.0.33
-  container_name: dbserver
-  environment:
-   - MYSQL_ROOT_PASSWORD=123
-   - LANG="en_US.UTF-8"
-   - TZ="UTC"
-   - MYSQL_USER=dev1
-   - MYSQL_PASSWORD=123
-   - MYSQL_DATABASE=sqlserversas
-  volumes:
-   - /sas/mysql:/var/lib/mysql
-  networks:
-   - sas_network
-  ports:
-   - 3306:3306
- frontend:
-  container_name: frontend
-  image: front_sas_img:1
-  build:
-   context: ..
-   dockerfile: ./kw1_BingChilling_Infrastructure/dockerfiles/frontend_multistage_dockerfile
-  ports:
-   - 80:80
-  depends_on:
-   - backend
+  nginx-reverse-proxy:
+    image: nginx:latest
+    container_name: nginx-reverse-proxy
+    ports:
+      - '80:80'
+    volumes:
+      - './nginx-proxy.conf:/etc/nginx/nginx.conf:ro'
+    networks:
+      - sas_network
+    depends_on:
+      - backend
+      - frontend
+  backend:
+    container_name: backend
+    image: back_sas_img:1
+    build:
+      context: ..
+      dockerfile: ./kw1_BingChilling_Infrastructure/dockerfiles/backend_multistage_dockerfile
+    ports:
+      - 8080:8080
+    depends_on:
+      - mysql
+    networks:
+      - sas_network
+      - sas_data
+  mysql:
+    image: mysql:8.0.33
+    container_name: dbserver
+    environment:
+      - MYSQL_ROOT_PASSWORD=123
+      - LANG="en_US.UTF-8"
+      - TZ="UTC"
+      - MYSQL_USER=dev1
+      - MYSQL_PASSWORD=123
+      - MYSQL_DATABASE=sqlserversas
+    volumes:
+      - /sas/mysql:/var/lib/mysql
+    networks:
+      - sas_data
+    ports:
+      - 3306:3306
+  frontend:
+    container_name: frontend
+    image: front_sas_img:1
+    build:
+      context: ..
+      dockerfile: ./kw1_BingChilling_Infrastructure/dockerfiles/frontend_multistage_dockerfile
+    networks:
+      - sas_network
+    ports:
+      - 800:80
+    depends_on:
+      - backend
 networks:
   sas_network:
-  
+  sas_data:

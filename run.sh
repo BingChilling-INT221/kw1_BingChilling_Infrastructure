@@ -1,4 +1,3 @@
- #! /bin/sh
 cd /home/moniyom/kw1_BingChilling_Frontend/
 git pull
 cd /home/moniyom/kw1_BingChilling_Backend/
