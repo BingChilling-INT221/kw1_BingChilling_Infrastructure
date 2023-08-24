@@ -1,0 +1,6 @@
+FROM nginx:alpine 
+RUN apt update
+RUN apt install snapd
+RUN snap install --classic certbot
+RUN ln -s /snap/bin/certbot /usr/bin/certbot
+RUN sudo certbot --nginx
