@@ -1,20 +1,15 @@
 version: '3.8'
 services:
   nginx-reverse-proxy:
-#    image: nginxproxy/nginx-proxy
     image: nginx:latest 
     container_name: nginx-reverse-proxy
-    restart: unless-stopped
+#    restart: unless-stopped
     ports:
       - '80:80'
-    #  - '443:443'
+      - '443:443'
     volumes:
-     # - '/home/moniyom/cerbot/default.conf:/etc/nginx/conf.d/default.conf'
-     - './nginx-proxy.conf:/etc/nginx/nginx.conf:ro'
-     # - '/var/run/docker.sock:/tmp/docker.sock:ro'
-     # - './nginx/html:/usr/share/nginx/html'
-     # - './nginx/certs:/etc/nginx/certs'
-     # - './nginx/vhost:/etc/nginx/vhost.d'
+     - './nginx-proxy/nginx.conf:/etc/nginx/nginx.conf:ro'
+     - './nginx-proxy/ssl:/ssl/:rw'
     networks:
       - sas_network
     depends_on:
@@ -69,17 +64,6 @@ services:
     environment:
       VIRTUAL_HOST: intproj22.sit.kmutt.ac.th/kw1
       LETSENCRYPT_HOST: intproj22.sit.kmutt.ac.th/kw1
-  #letsencrypt-companion:
-   # container_name: letsencrypt-companion
-    #image: jrcs/letsencrypt-nginx-proxy-companion
-    #restart: unless-stopped
-    #volumes_from:
-    #  - nginx-reverse-proxy
-    #volumes:
-    #  - '/var/run/docker.sock:/var/run/docker.sock'
-    #  - './nginx/acme:/etc/acme.sh'
-    #environment:
-     # DEFAULT_EMAIL: Chalunthorn.niyom@mail.kmutt.ac.th
 networks:
   sas_network: null
   sas_data: null
