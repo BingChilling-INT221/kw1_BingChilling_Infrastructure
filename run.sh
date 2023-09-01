@@ -4,7 +4,7 @@
 frontend_dir="/home/moniyom/kw1_BingChilling_Frontend/"
 backend_dir="/home/moniyom/kw1_BingChilling_Backend/"
 infrastructure_dir="/home/moniyom/kw1_BingChilling_Infrastructure/"
-compose_file="/home/moniyom/kw1_BingChilling_Infrastructure/docker-compose.yml"
+compose_file="/home/moniyom/kw1_BingChilling_Infrastructure/compose.yml"
 
 # Function to check if a Git repository is updated
 is_updated() {
