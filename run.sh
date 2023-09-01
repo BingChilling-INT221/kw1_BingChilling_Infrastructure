@@ -23,21 +23,21 @@ if is_updated "$frontend_dir"; then
     echo "Frontend repository has updates. Redeploying..."
     cd "$frontend_dir"
     git pull
-    docker-compose -f "$compose_file" up -d --build frontend
+    docker compose -f "$compose_file" up -d --build frontend
 fi
 
 if is_updated "$backend_dir"; then
     echo "Backend repository has updates. Redeploying..."
     cd "$backend_dir"
     git pull
-    docker-compose -f "$compose_file" up -d --build backend
+    docker compose -f "$compose_file" up -d --build backend
 fi
 
 if is_updated "$infrastructure_dir"; then
     echo "Infrastructure repository has updates. Redeploying..."
     cd "$infrastructure_dir"
     git pull
-    docker-compose -f "$compose_file" up -d
+    docker compose -f "$compose_file" up -d
 fi
 
 # Clean up unused Docker resources
