@@ -61,9 +61,9 @@ services:
       - '800:80'
     depends_on:
       - backend
-    environment:
-      VIRTUAL_HOST: intproj22.sit.kmutt.ac.th/kw1
-      LETSENCRYPT_HOST: intproj22.sit.kmutt.ac.th/kw1
+#    environment:
+#      VIRTUAL_HOST: intproj22.sit.kmutt.ac.th/kw1
+#      LETSENCRYPT_HOST: intproj22.sit.kmutt.ac.th/kw1
 networks:
   sas_network: null
   sas_data: null
