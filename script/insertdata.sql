@@ -17,8 +17,9 @@ INSERT INTO `sqlserversas`.`announcement` ( `announcementTitle`, `announcementDe
 commit;
 
 TRUNCATE TABLE `sqlserversas`.`user`;
-INSERT INTO `sqlserversas.user` VALUES (1,'sanit','Sanit Sirisawatvatana','sanit.sir@kmutt.ac.th','admin','2023-08-15 08:00:00+07:00','2023-08-15 08:00:00+07:00'),
-(2,'pornthip','Pornthip Sirijutikul','pornthip.sri@kmutt.ac.th','announcer','2023-08-15 09:30:00+07:00','2023-08-15 09:30:00+07:00'),
-(3,'jaruwan_w','Jaruwan Maneesart','jaruwan.wee@kmutt.ac.th','announcer','2023-08-16 08:00:00+07:00','2023-08-16 08:00:00+07:00'),
-(4,'vichchuda','Vichchuda Tedoloh','vichchuda.ted@kmutt.ac.th','announcer','2023-08-16 09:30:00+07:00','2023-08-16 09:30:00+07:00');
+INSERT INTO `sqlserversas`.`user` (`username`, `name`, `email`, `role`, `createdOn`, `updatedOn`) VALUES ('sanit', 'Sanit Sirisawatvatana', 'sanit.sir@kmutt.ac.th', 'admin', '2023-08-15 08:00:00+07:00', '2023-08-15 08:00:00+07:00');
+INSERT INTO `sqlserversas`.`user` (`username`, `name`, `email`, `role`, `createdOn`, `updatedOn`) VALUES ('pornthip', 'Pornthip Sirijutikul', 'pornthip.sri@kmutt.ac.th', 'announcer', '2023-08-15 09:30:00+07:00', '2023-08-15 09:30:00+07:00');
+INSERT INTO `sqlserversas`.`user` (`username`, `name`, `email`, `role`, `createdOn`, `updatedOn`) VALUES ('jaruwan_w', 'Jaruwan Maneesart', 'jaruwan.wee@kmutt.ac.th', 'announcer', '2023-08-16 08:00:00+07:00', '2023-08-16 08:00:00+07:00');
+INSERT INTO `sqlserversas`.`user` (`username`, `name`, `email`, `role`, `createdOn`, `updatedOn`) VALUES ('vichchuda', 'Vichchuda Tedoloh', 'vichchuda.ted@kmutt.ac.th', 'announcer', '2023-08-16 09:30:00+07:00', '2023-08-16 09:30:00+07:00');
+
 commit;
