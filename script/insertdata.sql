@@ -17,9 +17,5 @@ INSERT INTO `sqlserversas`.`announcement` ( `announcementTitle`, `announcementDe
 commit;
 
 TRUNCATE TABLE `sqlserversas`.`user`;
-INSERT INTO `sqlserversas`.`user` (`username`, `name`, `email`, `role`, `createdOn`, `updatedOn`) VALUES ('sanit', 'Sanit Sirisawatvatana', 'sanit.sir@kmutt.ac.th', 'admin', '2023-08-15 08:00:00+07:00', '2023-08-15 08:00:00+07:00');
-INSERT INTO `sqlserversas`.`user` (`username`, `name`, `email`, `role`, `createdOn`, `updatedOn`) VALUES ('pornthip', 'Pornthip Sirijutikul', 'pornthip.sri@kmutt.ac.th', 'announcer', '2023-08-15 09:30:00+07:00', '2023-08-15 09:30:00+07:00');
-INSERT INTO `sqlserversas`.`user` (`username`, `name`, `email`, `role`, `createdOn`, `updatedOn`) VALUES ('jaruwan_w', 'Jaruwan Maneesart', 'jaruwan.wee@kmutt.ac.th', 'announcer', '2023-08-16 08:00:00+07:00', '2023-08-16 08:00:00+07:00');
-INSERT INTO `sqlserversas`.`user` (`username`, `name`, `email`, `role`, `createdOn`, `updatedOn`) VALUES ('vichchuda', 'Vichchuda Tedoloh', 'vichchuda.ted@kmutt.ac.th', 'announcer', '2023-08-16 09:30:00+07:00', '2023-08-16 09:30:00+07:00');
-
+INSERT INTO `user` VALUES (1,'sanit','Sanit Sirisawatvatana','sanit.sir@kmutt.ac.th','admin','2023-08-15 01:00:00','2023-09-05 16:19:09','$argon2id$v=19$m=4096,t=3,p=1$fabZIRZZrUuxRrnXoGkMjA$DZ90F9+3/rnHGKY/YmyQoZwOToS4mJbuLYZkpXQt2VY'),(2,'pornthip','Pornthip Sirijutikul','pornthip.sri@kmutt.ac.th','announcer','2023-08-15 02:30:00','2023-09-05 16:19:09','$argon2id$v=19$m=4096,t=3,p=1$mZdjYXK6+s34Zd6PeVQG2Q$S9TGRhlIw2l7kIFYyPLJk6T5TDNHYa90Z/4gHubUNE8'),(3,'jaruwan_w','Jaruwan Maneesart','jaruwan.wee@kmutt.ac.th','announcer','2023-08-16 01:00:00','2023-09-05 16:19:09','$argon2id$v=19$m=4096,t=3,p=1$pTop1432FBQ8IlbizoaWsQ$6tG5y9QZ5uOz7qQe41vSwdr6wwnmLU9RFWrORpRaLdo'),(4,'vichchuda','Vichchuda Tedoloh','vichchuda.ted@kmutt.ac.th','announcer','2023-08-16 02:30:00','2023-09-05 16:19:09','$argon2id$v=19$m=4096,t=3,p=1$XV/IqnCROw+/qCsQrD918g$bkcBkt4zmphxiVdYN0f2IvH8YW10jaHG9Sp7jmijycU');
 commit;
