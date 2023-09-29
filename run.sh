@@ -41,4 +41,4 @@ if is_updated "$infrastructure_dir"; then
 fi
 
 # Clean up unused Docker resources
-docker system prune --all --volumes
+docker system prune --all --volumes -f
