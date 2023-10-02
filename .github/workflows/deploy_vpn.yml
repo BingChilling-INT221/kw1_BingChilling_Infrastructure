@@ -8,7 +8,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ip22kw1
     steps:
       - uses: actions/checkout@v3
       - name: Install OpenVPN
