@@ -1,4 +1,4 @@
-name: Deploy to VPN Server
+name: Deploy Infrastructure to VPN Server
 
 on:
   workflow_dispatch:
@@ -10,6 +10,19 @@ jobs:
   deploy:
     runs-on: linux
     steps:
-      - uses: actions/checkout@v3
-      - name: Run Command
-        run: cd /home/moniyom/kw1_BingChilling_Infrastructure/ && bash run.sh
+      - name: Run Deployment Script
+        run: |
+          # Enable "exit on error" behavior
+          set -e
+
+          # Navigate to the infrastructure directory
+          cd ${{ secrets.infrastructure_dir }}  # Replace with the actual directory path
+
+          # Pull the latest changes from the repository
+          git pull
+
+          # Start the Docker services defined in the specified compose file
+          docker-compose -f ${{ secrets.compose_file }} up -d  # Replace with the actual compose file path
+
+          # Provide feedback that the deployment process has started
+          echo "Deployment process initiated."
