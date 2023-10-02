@@ -11,5 +11,5 @@ jobs:
     runs-on: ip22kw1
     steps:
       - uses: actions/checkout@v3
-      - name: run Command
-       run:  cd /home/moniyom/kw1_BingChilling_Infrastructure/ && bash run.sh
+      - name: Run Command
+        run: cd /home/moniyom/kw1_BingChilling_Infrastructure/ && bash run.sh
