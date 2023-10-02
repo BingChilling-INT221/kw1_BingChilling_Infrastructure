@@ -11,7 +11,7 @@ env:
   compose_file: "/home/moniyom/kw1_BingChilling_Infrastructure/compose.yaml"
 
 jobs:
-  deploy:
+  deploy_Infra:
     runs-on: linux
     steps:
       - name: Run Deployment Script
