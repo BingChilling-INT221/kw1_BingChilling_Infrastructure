@@ -34,5 +34,5 @@ jobs:
       - name: Prune Docker
         run: |
           cd ${{ env.infrastructure_dir }}  # Navigate to the directory containing compose.yaml
-          docker compose prune --all --volume -f || echo "Prune command failed, but continuing..."
+          docker system prune --all --volumes --force || echo "Prune command failed, but continuing..."
 
