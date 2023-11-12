@@ -1,6 +1,6 @@
 delete from `sqlserversas`.`announcement`;
-
 TRUNCATE TABLE `sqlserversas`.`announcement`;
+delete from `sqlserversas`.`subscribe`;
 delete from `sqlserversas`.`category`;
 ALTER TABLE `sqlserversas`.`category` AUTO_INCREMENT = 1;
 INSERT INTO `sqlserversas`.`category` (`categoryName`) VALUES ('ทั่วไป');
