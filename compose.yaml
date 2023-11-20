@@ -1,15 +1,15 @@
-version: '3.8'
+version: "3.8"
 services:
   nginx-reverse-proxy:
-    image: nginx:latest 
+    image: nginx:latest
     container_name: nginx-reverse-proxy
     restart: unless-stopped
     ports:
-      - '80:80'
-      - '443:443'
+      - "80:80"
+      - "443:443"
     volumes:
-     - './nginx-proxy/nginx.conf:/etc/nginx/nginx.conf:ro'
-     - './nginx-proxy/ssl:/ssl/:rw'
+      - "./nginx-proxy/nginx.conf:/etc/nginx/nginx.conf:ro"
+      - "./nginx-proxy/ssl:/ssl/:rw"
     networks:
       - sas_network
     depends_on:
@@ -17,13 +17,15 @@ services:
       - frontend
   backend:
     container_name: backend
-    image: 'back_sas_img:1'
+    image: "back_sas_img:1"
     build:
       context: ..
       dockerfile: >-
         ./kw1_BingChilling_Infrastructure/dockerfiles/backend_multistage_dockerfile
     ports:
-      - '8080:8080'
+      - "8080:8080"
+    volumes:
+      - "/backend:/public/"
     depends_on:
       - mysql
     networks:
@@ -31,7 +33,7 @@ services:
       - sas_data
     restart: unless-stopped
   mysql:
-    image: 'mysql:8.0.33'
+    image: "mysql:8.0.33"
     container_name: dbserver
     environment:
       - MYSQL_ROOT_PASSWORD=123
@@ -41,16 +43,16 @@ services:
       - MYSQL_PASSWORD=123
       - MYSQL_DATABASE=sqlserversas
     volumes:
-      - '/sas/mysql:/var/lib/mysql'
+      - "/sas/mysql:/var/lib/mysql"
     networks:
       - sas_data
     ports:
-      - '3306:3306'
+      - "3306:3306"
     restart: unless-stopped
   frontend:
     container_name: frontend
     restart: unless-stopped
-    image: 'front_sas_img:1'
+    image: "front_sas_img:1"
     build:
       context: ..
       dockerfile: >-
@@ -58,7 +60,7 @@ services:
     networks:
       - sas_network
     ports:
-      - '800:80'
+      - "800:80"
     depends_on:
       - backend
 #    environment:
