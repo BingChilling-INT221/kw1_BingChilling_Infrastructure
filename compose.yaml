@@ -36,12 +36,12 @@ services:
     image: "mysql:8.0.33"
     container_name: dbserver
     environment:
-      - MYSQL_ROOT_PASSWORD=123
+      - MYSQL_ROOT_PASSWORD="${MYSQL_ROOT_PASSWORD}"
       - LANG="en_US.UTF-8"
       - TZ="UTC"
-      - MYSQL_USER=dev1
-      - MYSQL_PASSWORD=123
-      - MYSQL_DATABASE=sqlserversas
+      - MYSQL_USER="${MYSQL_USER}"
+      - MYSQL_PASSWORD="${MYSQL_PASSWORD}"
+      - MYSQL_DATABASE="${MYSQL_DATABASE}"
     volumes:
       - "/sas/mysql:/var/lib/mysql"
     networks:
